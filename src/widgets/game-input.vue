@@ -6,11 +6,12 @@ const value = ref('')
 
 const { historyList } = getGameContext()
 
-const handleInput = (e) => {
-  if(e.target.value.length > value.value.length) {
-    value.value = e.target.value
+const handleInput = (e: Event) => {
+  const input = e.target as HTMLInputElement
+  if(input.value.length > value.value.length) {
+    value.value = input.value
   } else {
-    e.target.value = value.value
+    input.value = value.value
   }
 }
 
